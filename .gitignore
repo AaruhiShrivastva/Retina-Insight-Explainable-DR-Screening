@@ -23,3 +23,22 @@ data/processed/*
 data/metadata/*
 !data/metadata/.gitkeep
 reports/generated/
+
+# Models and weights (binary weights exceed GitHub 100MB file limit)
+models/checkpoints/*
+!models/checkpoints/.gitkeep
+models/saved/*
+!models/saved/.gitkeep
+*.keras
+*.h5
+
+# Local databases
+data/database/*
+!data/database/.gitkeep
+*.db
+*.sqlite
+*.sqlite3
+
+# Ephemeral predictions
+outputs/predictions/*
+!outputs/predictions/.gitkeep
