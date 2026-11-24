@@ -5,13 +5,19 @@ import os
 from dataclasses import dataclass, field
 from pathlib import Path
 
+# Ensure Keras cache is directed to the local workspace cache when available
+_PROJECT_ROOT = Path(__file__).resolve().parent.parent
+_LOCAL_KERAS_CACHE = _PROJECT_ROOT / ".keras"
+if _LOCAL_KERAS_CACHE.is_dir():
+    os.environ.setdefault("KERAS_HOME", str(_LOCAL_KERAS_CACHE))
+
 
 @dataclass(frozen=True)
 class Config:
     """Project configuration with filesystem paths and model hyperparameters."""
 
     # Project filesystem layout
-    PROJECT_ROOT: Path = field(default_factory=lambda: Path(__file__).resolve().parent.parent)
+    PROJECT_ROOT: Path = field(default_factory=lambda: _PROJECT_ROOT)
     DATA_DIR: Path = field(init=False)
     METADATA_DIR: Path = field(init=False)
     RAW_DATA_DIR: Path = field(init=False)

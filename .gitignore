@@ -1,6 +1,7 @@
 # Python environments and caches
 .venv/
 venv/
+.keras/
 __pycache__/
 *.py[cod]
 .ipynb_checkpoints/
