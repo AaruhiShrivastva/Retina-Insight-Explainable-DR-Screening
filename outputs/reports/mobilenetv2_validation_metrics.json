@@ -1,0 +1,89 @@
+{
+  "num_samples": 27,
+  "accuracy": 0.1852,
+  "quadratic_weighted_kappa": 0.0919,
+  "macro_f1": 0.0929,
+  "weighted_f1": 0.1534,
+  "macro_precision": 0.224,
+  "weighted_precision": 0.5319,
+  "macro_recall": 0.2286,
+  "weighted_recall": 0.1852,
+  "roc_auc_macro": 0.8427,
+  "inference_latency_ms_per_sample": 35.96,
+  "per_class": {
+    "No DR": {
+      "grade": 0,
+      "precision": 1.0,
+      "recall": 0.14285714285714285,
+      "f1_score": 0.25,
+      "support": 14
+    },
+    "Mild": {
+      "grade": 1,
+      "precision": 0.12,
+      "recall": 1.0,
+      "f1_score": 0.21428571428571427,
+      "support": 3
+    },
+    "Moderate": {
+      "grade": 2,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "support": 7
+    },
+    "Severe": {
+      "grade": 3,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "support": 1
+    },
+    "Proliferative DR": {
+      "grade": 4,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "support": 2
+    }
+  },
+  "confusion_matrix": [
+    [
+      2,
+      12,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      3,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      7,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      2,
+      0,
+      0,
+      0
+    ]
+  ],
+  "architecture": "mobilenetv2",
+  "split": "validation"
+}

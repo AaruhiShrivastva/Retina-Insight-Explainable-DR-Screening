@@ -77,12 +77,12 @@ def train_model(
         LOGGER.info("Subsampling training dataset by factor of %.2f", subsample_ratio)
         train_df = (
             train_df.groupby("diagnosis", group_keys=False)
-            .apply(lambda g: g.sample(frac=subsample_ratio, random_state=seed))
+            .apply(lambda g: g.sample(frac=subsample_ratio, random_state=seed), include_groups=True)
             .reset_index(drop=True)
         )
         val_df = (
             val_df.groupby("diagnosis", group_keys=False)
-            .apply(lambda g: g.sample(frac=subsample_ratio, random_state=seed))
+            .apply(lambda g: g.sample(frac=subsample_ratio, random_state=seed), include_groups=True)
             .reset_index(drop=True)
         )
         LOGGER.info(
