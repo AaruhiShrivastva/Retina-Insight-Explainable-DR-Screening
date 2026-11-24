@@ -1,0 +1,25 @@
+# Python environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+
+# Jupyter and editor state
+.jupyter/
+.idea/
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+
+# APTOS data and generated analysis artifacts (large or reproducible)
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+data/metadata/*
+!data/metadata/.gitkeep
+reports/generated/
