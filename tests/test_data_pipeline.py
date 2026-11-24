@@ -1,8 +1,16 @@
 """Unit tests for RetinaInsight dataset loader and preprocessing pipeline."""
 from __future__ import annotations
 
-import unittest
+import os
 from pathlib import Path
+
+# Direct Keras cache inside project root before TensorFlow/Keras initializes
+_PROJECT_ROOT = Path(__file__).resolve().parent.parent
+_LOCAL_KERAS_CACHE = _PROJECT_ROOT / ".keras"
+if _LOCAL_KERAS_CACHE.is_dir():
+    os.environ["KERAS_HOME"] = str(_LOCAL_KERAS_CACHE)
+
+import unittest
 
 import numpy as np
 import tensorflow as tf
